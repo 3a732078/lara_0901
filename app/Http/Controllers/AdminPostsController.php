@@ -23,6 +23,10 @@ class AdminPostsController extends Controller
         return view('admin.posts.create');
     }
 
+    public function store()
+    {
+    }
+
     public function edit($id)
     {
         $data = ['id' => $id];
