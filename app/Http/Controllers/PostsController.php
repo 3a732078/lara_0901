@@ -7,9 +7,7 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $p = Post::orderBy('created_at','DESC')->get();
-        $data = ['posts'=>$p];
-        return view('posts.index',$data);
+        return view('posts.index');
     }
 
     public function show($id)

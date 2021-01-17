@@ -25,6 +25,21 @@
 </div>
 <!-- /.row -->
 
+@foreach($posts as $post)
+    <tr>
+        <td style="text-align: center">{{ $post‐>id }}</td>
+        <td>{{ $post‐>title }}</td>
+        <td style="text-align: center">{{ ($post‐>is_feature)? 'v' : 'x' }}</td>
+        <td>
+            <a href="{{ route('admin.posts.edit', $post ->id) }}">編輯</a>
+            /
+            <a href="#">刪除</a>
+        </td>
+    </tr>
+@endforeach
+
+Laravel
+
 <div class="row">
     <div class="col-lg-12">
         <div class="table-responsive">
