@@ -58,7 +58,7 @@
                 <select id="is_feature"
                         name="is_feature"
                         class="form-control">
-                    
+
                     <option value="0">否</option>
                     <option value="1">是</option>
                 </select>

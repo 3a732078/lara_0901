@@ -32,4 +32,4 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::post('posts',[AdminPostsController::class,
-    'store'])->name('admin.posts.apc_store');
+    'store'])->name('admin.posts.store');

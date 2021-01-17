@@ -25,19 +25,6 @@
 </div>
 <!-- /.row -->
 
-@foreach($p as $post)
-    <tr>
-        <td style="text-align: center">{{ $post‐>id }}</td>
-        <td>{{ $post‐>title }}</td>
-        <td style="text-align: center">{{ ($post‐>is_feature)? 'v' : 'x' }}</td>
-        <td>
-            <a href="{{ route('admin.posts.edit', $post ->id) }}">編輯</a>
-            /
-            <a href="#">刪除</a>
-        </td>
-    </tr>
-@endforeach
-
 Laravel
 
 <div class="row">
@@ -48,20 +35,34 @@ Laravel
                     <tr>
                         <th width="30" style="text-align: center">#</th>
                         <th>標題</th>
-                        <th width="70" style="text-align: center">精選？</th>
+                        <th width="70" style="text-align: center">精選</th>
                         <th width="100" style="text-align: center">功能</th>
                     </tr>
                 </thead>
                 <tbody>
-                @foreach(range(1, 20) as $id)
+                @foreach($p as $post)
+
                     <tr>
-                        <td style="text-align: center">{{ $id }}</td>
-                        <td>文章標題</td>
-                        <td style="text-align: center">V</td>
+                        <td style="text-align: center">
+                            {{ $post -> id }}</td>
+                        <td>{{ $post -> title }}</td>
+                        <td style="text-align: center">
+                            {{ ($post -> is_feature)?
+ 'v' : '' }}</td>
                         <td>
-                            <a href="{{ route('admin.posts.edit', $id) }}">編輯</a>
-                            /
-                            <a href="#">刪除</a>
+                            <a class=
+                               "btn btn-sm btn-primary"
+                               href=
+                               "{{route('admin.posts.edit',
+$post -> id)}}">編輯</a>
+                            <form action=
+                                  "/admin/posts/
+               {{($post->id)}}" method="POST" style="display: inline">
+                                @method('DELETE')
+                                @csrf
+                                <button
+                                    class="btn btn-sm btn-danger" type="submit">刪除</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
