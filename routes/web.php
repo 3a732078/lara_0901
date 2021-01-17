@@ -33,3 +33,6 @@ Route::prefix('admin')->group(function () {
 
 Route::post('posts',[AdminPostsController::class,
     'store'])->name('admin.posts.store');
+
+Route::patch('posts/{id}',[AdminPostsController::class,
+    'edit'])->name('admin.posts.update');
