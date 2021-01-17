@@ -25,7 +25,7 @@
 </div>
 <!-- /.row -->
 
-@foreach($posts as $post)
+@foreach($p as $post)
     <tr>
         <td style="text-align: center">{{ $post‐>id }}</td>
         <td>{{ $post‐>title }}</td>
